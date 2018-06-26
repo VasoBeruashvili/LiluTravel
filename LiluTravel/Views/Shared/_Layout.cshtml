@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>LiLu.Ge</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <meta name="keywords" content="Global Tours Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+        Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+        <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+        <!-- bootstrap-css -->
+        <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="~/Content/bootstrap-flat.min.css" rel="stylesheet" />
+        <!--// bootstrap-css -->
+        <!-- css -->
+        <link rel="stylesheet" href="~/Content/style.css" type="text/css" media="all" />
+        <!--// css -->
+        <!-- font-awesome icons -->
+        <link href="~/Content/font-awesome.min.css" rel="stylesheet">
+        <!-- //font-awesome icons -->
+        <!-- gallery -->
+        <link rel="stylesheet" href="~/Content/lightbox.css">
+        <!-- //gallery -->
+        <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+        <script src="~/Scripts/jquery.shorten.1.0.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+        <script type="text/javascript">
+	        jQuery(document).ready(function($) {
+		        $(".scroll").click(function(event){
+			        event.preventDefault();
+			        $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		        });
+	        });
+        </script>
+
+        <script src="~/Scripts/angular.min.js"></script>
+        <script src="~/Scripts/app/main-module.js"></script>
+    </head>
+    <body ng-app="MainApp">
+        <div class="banner-top">
+            <div class="slider">
+                <div class="callbacks_container">
+                    <ul class="rslides callbacks callbacks1" id="slider4">
+                        <li>
+                            <div class="w3layouts-banner-top">
+                                <div class="container">
+                                    <div class="agileits-banner-info">
+                                        <h3></h3>
+                                        <h4></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="w3layouts-banner-top w3layouts-banner-top1">
+                                <div class="container">
+                                    <div class="agileits-banner-info1">
+                                        <h3></h3>
+                                        <h4></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="w3layouts-banner-top w3layouts-banner-top2">
+                                <div class="container">
+                                    <div class="agileits-banner-info2">
+                                        <h3></h3>
+                                        <h4></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="w3layouts-banner-top w3layouts-banner-top3">
+                                <div class="container">
+                                    <div class="agileits-banner-info3">
+                                        <h3></h3>
+                                        <h4></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="w3layouts-banner-top w3layouts-banner-top4">
+                                <div class="container">
+                                    <div class="agileits-banner-info4">
+                                        <h3></h3>
+                                        <h4></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clearfix"> </div>
+                <script src="~/Scripts/responsiveslides.min.js"></script>
+                <script>
+                    // You can also use "$(window).load(function() {"
+                    $(function () {
+                        // Slideshow 4
+                        $("#slider4").responsiveSlides({
+                            auto: true,
+                            pager: true,
+                            nav: false,
+                            speed: 500,
+                            namespace: "callbacks",
+                            before: function () {
+                                $('.events').append("<li>before event fired.</li>");
+                            },
+                            after: function () {
+                                $('.events').append("<li>after event fired.</li>");
+                            }
+                        });
+
+                    });
+                </script>
+                <!--banner Slider starts Here-->
+            </div>
+        </div>
+
+        <!-- banner -->
+        <div class="banner">
+            <div class="header">
+                <div class="container">
+                    <div class="header-left">
+                        <div class="w3layouts-logo">
+                            <h1>
+                                <a href="/">LiLu.Ge</a>
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="header-right">
+                        <p><i class="fa fa-phone" aria-hidden="true"></i> +995 599 370 293</p>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+            <div class="header-bottom">
+                <div class="container">
+                    <div class="top-nav">
+                        <nav class="navbar navbar-default">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <ul class="nav navbar-nav">
+                                    <li><a class="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "") list-border menu-left" href="/">მთავარი</a></li>
+                                    <li><a class="@(ViewContext.RouteData.Values["Action"].ToString() == "About" ? "active" : "")" href="/Company/About">ჩვენ შესახებ</a></li>
+                                    <li><a class="@(ViewContext.RouteData.Values["Action"].ToString() == "Partners" ? "active" : "")" href="/Company/Partners">პარტნიორები</a></li>
+                                    <li><a class="@(ViewContext.RouteData.Values["Action"].ToString() == "Contact" ? "active" : "") menu-right" href="/Company/Contact">კონტაქტი</a></li>
+                                </ul>
+                                <div class="clearfix"> </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //banner -->
+
+        @RenderBody()
+        <div hidden id="loader"></div>
+
+        <!-- footer -->
+        <div class="footer">
+            <div class="container">
+                <div class="copyright">
+                    <p>© 2017 Global Tours . All Rights Reserved | Design by <a href="http://w3layouts.com/"> W3layouts</a> </p>
+                </div>
+            </div>
+        </div>
+        <!-- //footer -->
+
+        <script src="~/Scripts/responsiveslides.min.js"></script>
+        <script src="~/Scripts/SmoothScroll.min.js"></script>
+        <script type="text/javascript" src="~/Scripts/move-top.js"></script>
+        <script type="text/javascript" src="~/Scripts/easing.js"></script>
+        <!-- here stars scrolling icon -->
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $().UItoTop({ easingType: 'easeOutQuart' });
+            });
+        </script>
+        <!-- //here ends scrolling icon -->
+    </body>
+</html>

@@ -1,0 +1,76 @@
+.focusBtn, .focusIndicators a{ 
+display:block; 
+background:url(../images/script.png);
+background-repeat:no-repeat;}
+
+.focusMain{ width:650px; 
+            position:relative; 
+			margin:0 auto;}
+			
+.focusArea{ width:594px; 
+            margin:0 auto 15px; 
+			position:relative; 
+			overflow:hidden;}
+			
+.focusCon{ width:594px; 
+           position:absolute; 
+		   top:0;}
+		   
+.focusItem{ position:relative; 
+            margin:0 4px; 
+			padding:1px; 
+			border:1px solid #666; 
+			background:#DDDEDE;}
+
+.focusIndicators
+{ height:7px; 
+font-size:0; 
+line-height:0; 
+text-align:center;}
+
+.focusIndicators a{ 
+display:inline-block; 
+width:7px; 
+height:7px; 
+margin:0 4px; 
+background-position:0 -50px; 
+font-size:0; 
+zoom:1; 
+cursor:pointer; 
+overflow:hidden;}
+
+.focusIndicators .current{ background-position:-10px -50px;}
+.focusItem img, .focusIndicators img{ width:100%; height:100%;}
+.isCarousel .focusArea{ height:130px;}
+ 
+.isCarousel .focusItem
+{ float:left; 
+  width:186px; 
+  height:126px; 
+  display:inline;}
+
+.isCarousel .focusGroup{ 
+float:left; 
+display:inline;}
+
+.isFocus .focusArea{ 
+height:330px;}
+
+.isFocus .focusItem{ 
+width:582px; 
+height:326px;}
+
+.demoG .focusItem{ 
+display:none; 
+position:absolute; 
+top:0; left:0; }
+
+.demoG .focusIndicators{ height:42px;}
+.demoG .focusIndicators a
+{ width:60px; 
+  height:40px; 
+  margin:0 2px; 
+  border:1px solid #000; 
+  background:none;}
+  
+.demoG .focusIndicators .current{ border:1px solid #FFF;}

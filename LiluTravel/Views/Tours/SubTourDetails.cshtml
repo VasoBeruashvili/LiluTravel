@@ -1,0 +1,94 @@
+﻿<script>
+    var tourId = @Html.Raw(ViewBag.tourId);
+    var subTourId = @Html.Raw(ViewBag.subTourId);
+</script>
+<script src="~/Scripts/app/controllers/sub-tours-controller.js"></script>
+
+<!-- sub tour details -->
+<div ng-controller="SubToursController">
+    <div ng-if="tours" class="sub-menu container">
+        <div id="tours-expander" class="collapse row">
+            <div ng-click="redirectToTourDetails(tour.id)" class="col-md-3" ng-repeat="tour in tours"><div class="tour-button-inner {{tour.activeClass}}">{{tour.name}}</div></div>
+        </div>
+        <center>
+            <a id="btn-tours-expander" class="btn btn-default" data-toggle="collapse" data-target="#tours-expander">ტურები</a>
+        </center>
+    </div>
+    <div ng-if="subTours" class="sub-menu container">
+        <div id="sub-tours-expander" class="collapse row">
+            <div ng-click="redirectToSubTourDetails(subTour.id)" class="col-md-3" ng-repeat="subTour in subTours"><div class="tour-button-inner {{subTour.activeClass}}">{{subTour.name}}</div></div>
+        </div>
+        <center>
+            <a id="btn-sub-tours-expander" class="btn btn-default" data-toggle="collapse" data-target="#sub-tours-expander">ქვე-ტურები</a>
+        </center>
+    </div>
+
+    <div class="w3l-about">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-4 item-photo">
+                    <img ng-if="subTour.images.length === 0" style="max-width:100%;" src="~/Content/Images/no-sub-tour-image.png" />
+                    <div ng-if="subTour.images.length > 0" id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="{{img.active}}" ng-repeat="img in subTour.images"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item {{img.active}}" ng-repeat="img in subTour.images">
+                                <img src="{{img.image}}" style="width:100%;">
+                            </div>
+                        </div>
+
+                        <!-- Left and right controls -->
+                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-8">
+                    <div class="form-inline">
+                        <h4><b>{{subTour.name}}</b> <span class="pull-right" style="color: forestgreen;"><i class="fa fa-money"></i> {{subTour.price | number: 2}} GEL</span></h4>
+                    </div>
+                    <div style="width:100%;border-top:1px solid silver">
+                        <p style="padding:15px;">
+                            <small>
+                                {{subTour.description}}
+                            </small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DISQUS -->
+    <div class="container">
+        <div id="disqus_thread"></div>
+        <script>
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        /*
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://lilucompany.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+    <!-- //DISQUS -->
+
+</div>
+<!-- //sub tour details -->

@@ -1,0 +1,65 @@
+﻿<script>
+    var tourId = @Html.Raw(ViewBag.tourId);
+</script>
+<script src="~/Scripts/app/controllers/tours-controller.js"></script>
+
+<!-- tour details -->
+<div ng-controller="ToursController">
+    <div ng-if="tours" class="sub-menu container">        
+        <div id="tours-expander" class="collapse row">
+            <div ng-click="redirectToTourDetails(tour.id)" class="col-md-3" ng-repeat="tour in tours"><div class="tour-button-inner {{tour.activeClass}}">{{tour.name}}</div></div>
+        </div>
+        <center>
+            <a id="btn-tours-expander" class="btn btn-default" data-toggle="collapse" data-target="#tours-expander">ტურები</a>
+        </center>
+    </div>    
+
+    <div ng-if="tour" class="w3l-about">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-4 item-photo">
+                    <img ng-if="tour.images.length === 0" style="max-width:100%;" src="~/Content/Images/no-sub-tour-image.png" />
+                    <div ng-if="tour.images.length > 0" id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="{{img.active}}" ng-repeat="img in tour.images"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item {{img.active}}" ng-repeat="img in tour.images">
+                                <img src="{{img.image}}" style="width:100%;">
+                            </div>
+                        </div>
+
+                        <!-- Left and right controls -->
+                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-8">
+                    <div class="form-inline">
+                        <h4><b>{{tour.name}}</b></h4>
+                    </div>
+                    <div style="width:100%;border-top:1px solid silver">
+                        <p style="padding:15px;">
+                            <small class="comment more">
+                                {{tour.description}}
+                            </small>
+                        </p>
+                    </div>
+                </div>
+            </div>            
+        </div>
+        <div class="container">
+            <div class="row">
+                <div ng-click="redirectToSubTourDetails(subTour.id)" class="col-md-3" ng-repeat="subTour in tour.subTours"><div class="tour-button">{{subTour.name}}</div></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //tour details -->

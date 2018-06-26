@@ -1,0 +1,25 @@
+﻿<script src="~/Scripts/app/controllers/main-controller.js"></script>
+
+<!-- tours -->
+<div ng-controller="MainController">
+    <div class="w3l-about">
+        <div class="container">
+            <div class="w3ls-heading">
+                <h2>ტურები</h2>
+            </div>
+            <div class="w3ls-about-info">
+                <div class="container tour-buttons-container">
+                    <div class="row">
+                        <div ng-click="redirectToTourDetails(tour.id)" class="col-md-3" ng-repeat="tour in tours"><div class="tour-button">{{tour.name}}</div></div>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="video-iframe-container">
+        <center>
+            <iframe src="https://www.youtube.com/embed/StyXS_Q3YjE" frameborder="0" allowfullscreen></iframe>
+        </center>
+    </div>
+</div>
+<!-- //tours -->
